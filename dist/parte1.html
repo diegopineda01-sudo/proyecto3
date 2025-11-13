@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/proyecto3/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parte1</title>
+  <link rel="stylesheet" crossorigin href="/proyecto3/assets/parte1-BouNAw9v.css">
+</head>
+
+<body>
+    <main>
+        <p class="textoPrincipal">Counter</p>
+        <p class="Contador">0</p>
+        <div class="botones">
+            <button class="DECREASE">DECREASE</button>
+            <button class="RESET">RESET</button>
+            <button class="INCREASE">INCREASE</button>
+        </div>
+        <a href="index.html" class="ParteAnterior">Parte Anterior</a>
+    </main>
+    <script>
+        let contador = 0;
+
+        let botones = document.querySelectorAll("button");
+
+        let textoContador = document.querySelector(".Contador")
+
+        botones.forEach(boton => {
+            boton.addEventListener("click", () => {
+                if (boton.classList.contains("DECREASE")) {
+                    contador--;
+                } else if (boton.classList.contains("INCREASE")) {
+                    contador++;
+                } else {
+                    contador = 0;
+                }
+                textoContador.textContent = contador;
+
+                if (contador > 0) {
+                    textoContador.style.color = 'green'
+                } else if (contador < 0) {
+                    textoContador.style.color = 'red'
+                } else {
+                    textoContador.style.color = 'black'
+                }
+            })
+        });
+
+    </script>
+</body>
+
+</html>
